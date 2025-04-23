@@ -1,0 +1,16 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  
+  .promocja {
+    background-color: #ffdddd; 
+  }
+  

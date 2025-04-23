@@ -1,0 +1,31 @@
+<button (click)="toggleWidok()">
+    {{ ukryty ? 'Rozwiń' : 'Zwiń' }}
+  </button>
+  
+  <div *ngIf="ukryty">
+    <p><strong>{{ produkt.nazwa }}</strong></p>
+  </div>
+  
+  <table *ngIf="!ukryty" [ngClass]="{ 'promocja': produkt.czyPromocja }">
+    <thead>
+      <tr>
+        <th>Nazwa</th>
+        <th>Cena</th>
+        <th>Data utworzenia</th>
+        <th>Dodaj do koszyka</th>
+        <th>Liczba sztuk w koszyku</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ produkt.nazwa }}</td>
+        <td>{{ produkt.cena | number:'1.2-2' }} zł</td>
+        <td>{{ produkt.dataUtworzenia | date:'dd.MM.yyyy' }}r.</td>
+        <td>
+          <button (click)="kliknijDodaj()">Dodaj do koszyka</button>
+        </td>
+        <td>{{ iloscWKoszyku }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
